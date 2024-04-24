@@ -1,41 +1,31 @@
-import styles from "./App.module.css";
 import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom";
 
 import WaterJug from "./components/WaterJug/WaterJug";
+import Puzzle from "./components/8Puzzle/Puzzle";
+import TicTacToe from "./components/TicTacToe/TicTacToe";
+import Maze from "./components/Maze/Maze";
+import TravSalesMan from "./components/TravellingSalesman/TravSalesman";
+import Home from "./components/Home/Home";
+
+import styles from "./App.module.css";
 
 function App() {
   return (
     <Router>
       <div className={styles.App}>
-        <p className={styles.heading}>AI-ML Game</p>
-        <div className={styles.game_div}>
-          <Link to="/maze" className={styles.game_button}>
-            <div>
-              <p className={styles.game_text}>Maze</p>
-            </div>
-          </Link>
-          <Link to="/waterjug">
-            <div className={styles.game_button}>
-              <img src="ihbfij" alt="" />
-              <p className={styles.game_text}>Water jug</p>
-            </div>
-          </Link>
-          <Link to="/puzzle">
-            <div className={styles.game_button}>
-              <p className={styles.game_text}>8 puzzle</p>
-            </div>
-          </Link>
-          <Link to="/tic-tac-toe">
-            <div className={styles.game_button}>
-              <p className={styles.game_text}>Tic-Tac-Toe</p>
-            </div>
-          </Link>
-          <div className={styles.game_button}>
-            <p className={styles.game_text}>Find S</p>
-          </div>
-        </div>
+        <Link to="/" className={styles.back_btn}>
+          <p className={styles.back_btn_text}>⬅</p>
+        </Link>
+        <Link to="/">
+          <p className={styles.heading}>Game Master</p>
+        </Link>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/waterjug" element={<WaterJug />} />
+          <Route path="/8puzzle" element={<Puzzle />} />
+          <Route path="/maze" element={<Maze />} />
+          <Route path="/tic-tac-toe" element={<TicTacToe />} />
+          <Route path="/tsp" element={<TravSalesMan />} />
         </Routes>
       </div>
     </Router>
