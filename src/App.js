@@ -10,6 +10,7 @@ import Home from "./components/Home/Home";
 import styles from "./App.module.css";
 
 function App() {
+  const testVariable = 0;
   return (
     <Router>
       <div className={styles.App}>
